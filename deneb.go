@@ -159,7 +159,7 @@ func (g *DenebGenesisCmd) Run(ctx context.Context, args ...string) error {
 	eth1BlockHash = common.Root(eth1Block.Hash())
 
 	extra := eth1Block.Extra()
-	if len(extra) > common.MAX_EXTRA_DATA_BYTES {
+	if len(extra) > 97 {
 		return fmt.Errorf("extra data is %d bytes, max is %d", len(extra), common.MAX_EXTRA_DATA_BYTES)
 	}
 
